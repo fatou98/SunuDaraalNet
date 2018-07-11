@@ -17,6 +17,17 @@ class Commande
     private $id;
 
     /**
+    * @ORM\ManyToOne(targetEntity="App\Entity\Client")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $client;
+    
+    /**
+    * @ORM\ManyToMany(targetEntity="App\Entity\Bete")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $bete;
+    /**
      * @ORM\Column(type="date")
      */
     private $date;
@@ -51,6 +62,46 @@ class Commande
     public function setEtat(bool $etat): self
     {
         $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of client
+     */ 
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set the value of client
+     *
+     * @return  self
+     */ 
+    public function setClient($client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of bete
+     */ 
+    public function getBete()
+    {
+        return $this->bete;
+    }
+
+    /**
+     * Set the value of bete
+     *
+     * @return  self
+     */ 
+    public function setBete($bete)
+    {
+        $this->bete = $bete;
 
         return $this;
     }

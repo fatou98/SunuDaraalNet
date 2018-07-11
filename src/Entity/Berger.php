@@ -5,11 +5,11 @@ use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
- * @ORM\Table(name="client")
+ * @ORM\Table(name="berger")
  * @UniqueEntity(fields="email")
  * @ORM\Entity()
  */
-class Client implements AdvancedUserInterface, \Serializable {
+class Berger implements AdvancedUserInterface, \Serializable {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")

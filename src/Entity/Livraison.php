@@ -17,6 +17,11 @@ class Livraison
     private $id;
 
     /**
+    * @ORM\ManyToOne(targetEntity="App\Entity\Commande")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $commande;
+    /**
      * @ORM\Column(type="date")
      */
     private $date;
@@ -51,6 +56,26 @@ class Livraison
     public function setEtat(bool $etat): self
     {
         $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of commande
+     */ 
+    public function getCommande()
+    {
+        return $this->commande;
+    }
+
+    /**
+     * Set the value of commande
+     *
+     * @return  self
+     */ 
+    public function setCommande($commande)
+    {
+        $this->commande = $commande;
 
         return $this;
     }

@@ -52,6 +52,17 @@ class Bete
     private $poids;
 
     /**
+    * @ORM\ManyToOne(targetEntity="App\Entity\Bergerie")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $bergerie;
+    
+    /**
+    * @ORM\ManyToMany(targetEntity="App\Entity\Race")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $race;
+    /**
      * @ORM\Column(type="boolean")
      */
     private $etat;
@@ -170,6 +181,46 @@ class Bete
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of bergerie
+     */ 
+    public function getBergerie()
+    {
+        return $this->bergerie;
+    }
+
+    /**
+     * Set the value of bergerie
+     *
+     * @return  self
+     */ 
+    public function setBergerie($bergerie)
+    {
+        $this->bergerie = $bergerie;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of race
+     */ 
+    public function getRace()
+    {
+        return $this->race;
+    }
+
+    /**
+     * Set the value of race
+     *
+     * @return  self
+     */ 
+    public function setRace($race)
+    {
+        $this->race = $race;
 
         return $this;
     }

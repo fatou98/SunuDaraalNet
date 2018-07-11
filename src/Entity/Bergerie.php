@@ -17,6 +17,11 @@ class Bergerie
     private $id;
 
     /**
+    * @ORM\ManyToOne(targetEntity="App\Entity\Berger")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $berger;
+    /**
      * @ORM\Column(type="string", length=100)
      */
     private $libelle;
