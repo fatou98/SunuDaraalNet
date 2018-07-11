@@ -66,7 +66,11 @@ class Bete
      * @ORM\Column(type="boolean")
      */
     private $etat;
-
+    /**
+    * @ORM\OneToMany(targetEntity="App\Entity\Image",mappedBy="bien" )
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $images;
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -221,6 +225,26 @@ class Bete
     public function setRace($race)
     {
         $this->race = $race;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of images
+     */ 
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * Set the value of images
+     *
+     * @return  self
+     */ 
+    public function setImages($images)
+    {
+        $this->images = $images;
 
         return $this;
     }
