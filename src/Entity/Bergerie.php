@@ -59,4 +59,24 @@ class Bergerie
 
         return $this;
     }
+
+    /**
+     * Get the value of berger
+     */ 
+    public function getBerger()
+    {
+        return $this->berger;
+    }
+
+    /**
+     * Set the value of berger
+     *
+     * @return  self
+     */ 
+    public function setBerger($berger)
+    {
+        $this->berger = $berger;
+
+        return $this;
+    }
 }

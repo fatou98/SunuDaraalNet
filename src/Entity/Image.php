@@ -21,10 +21,10 @@ class Image
      */
     private $image;
  /**
-    * @ORM\ManyToOne(targetEntity="App\Entity\Bien", inversedBy="images")
+    * @ORM\ManyToOne(targetEntity="App\Entity\Bete", inversedBy="images")
     * @ORM\JoinColumn(nullable=false)
     */
-    private $bien;
+    private $bete;
     
     public function getId()
     {
@@ -43,22 +43,24 @@ class Image
         return $this;
     }
 
+   
+
     /**
-     * Get the value of bien
+     * Get the value of bete
      */ 
-    public function getBien()
+    public function getBete()
     {
-        return $this->bien;
+        return $this->bete;
     }
 
     /**
-     * Set the value of bien
+     * Set the value of bete
      *
      * @return  self
      */ 
-    public function setBien($bien)
+    public function setBete($bete)
     {
-        $this->bien = $bien;
+        $this->bete = $bete;
 
         return $this;
     }
