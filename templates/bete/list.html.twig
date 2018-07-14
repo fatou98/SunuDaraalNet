@@ -1,0 +1,77 @@
+{% extends 'layoutadmin.html.twig' %}
+
+{% block title %}Hello {% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="table-layout animated fadeIn" style="margin-top:-400px;margin-left:100px;">
+<div class="row">
+    <div class="col-lg-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark"> <i class="icon-acteurs font-dark"></i> <span class="caption-subject bold uppercase">Liste des contrats</span> </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar" style="border: 1px solid #d4d4d4; padding: 4px;background: #efefef;">
+                    <div class="pull-right">
+                        <a href="<?php _url('contrats/contrat_auto/showExport/'.@$result_type);?>" class="btn btn-circle purple"><i class="fa fa-download"></i> Exporter </a>
+                    </div>
+                </div>
+
+                <table id="datagrid" class="datagrid table table-striped table-bordered table-hover table-checkable">
+                    <thead>
+                    <tr>
+                      <th style="width: 1%"> <input type="checkbox" class="group-checkable" data-set=".datagrid .checkboxes" />
+                      </th>
+                        <th class="text-center" order="desc"> Numero</th>
+                        <th class="text-center"> Nom Bete </th>
+                        <th class="text-center"> Age </th>
+                        <th class="text-center"> Couleur </th>
+                        <th class="text-center"> Prix </th>
+                        <th class="text-center"> Gabari </th>
+                        <th class="text-center"> Taille </th>
+                        <th class="text-center"> Poids </th>
+                        <th class="text-center"> Description </th> 
+                        <th class="text-center"> Bergerie </th>                       
+                        <th style="width: 1%;" class="no-sort hide"> Action </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   
+                     
+                         {% for bete in betes %}
+
+
+                        <tr>
+                         <td><input name="selected[]" type="checkbox" class="checkboxes" value="{{bete.id}}" /></td>                               
+                            <td>{{bete.id}}</td>
+                            <td>{{bete.nomcomplet}}</td>
+                            <td>{{bete.age}}</td>
+                            <td>{{bete.couleur}}</td>
+                            <td>{{bete.prix}}</td>
+                            <td>{{bete.gabari}}</td>
+                            <td>{{bete.taille}}</td>
+                            <td>{{bete.poids}}</td>
+                            <td>{{bete.description}}</td>
+                            <td>{{bete.bergerie.libelle}}</td>
+                            <td>
+                                <a href="{{ path('berger_show', {'id': bete.id}) }}">show</a>
+                                <a href="{{ path('berger_delete', {'id': bete.id}) }}">supprimer</a
+                            </td>
+                           
+                        
+                           </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

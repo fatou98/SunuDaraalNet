@@ -24,6 +24,8 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -928,91 +930,33 @@
           <li class="sidebar-label pt15">Exclusive Tools</li>
           <li>
             <a class="accordion-toggle" href="#">
-              <span class="fa fa-columns"></span>
-              <span class="sidebar-title">Layout Templates</span>
+              <span class="fas fa-users"></span>
+              <span class="sidebar-title">Acteurs</span>
               <span class="caret"></span>
             </a>
             <ul class="nav sub-nav">
               <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa fa-arrows-h"></span>
-                  Sidebars
-                  <span class="caret"></span>
+                <a  href="{{path('berger')}}">
+                  
+                  Berger
+                 </a>
+                 </li>
+
+                <a  href="">                  
+                  Clients                 
                 </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_sidebar-left-static.html">
-                      Left Static </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-left-fixed.html">
-                      Left Fixed </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-left-widgets.html">
-                      Left Widgets </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-left-minified.html">
-                      Left Minified </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-left-light.html">
-                      Left White </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-right-static.html">
-                      Right Static </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-right-fixed.html">
-                      Right Fixed </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-right-menu.html">
-                      Right w/Menu </a>
-                  </li>
+                </li>
                 </ul>
-              </li>
               <li>
                 <a class="accordion-toggle" href="#">
-                  <span class="fa fa-arrows-v"></span>
-                  Navbar
+                  <span class="fab fa-product-hunt" ></span>
+                  Produits
                   <span class="caret"></span>
                 </a>
                 <ul class="nav sub-nav">
                   <li>
-                    <a href="layout_navbar-static.html">
-                      Navbar Static </a>
-                  </li>
-                  <li>
-                    <a href="layout_navbar-fixed.html">
-                      Navbar Fixed </a>
-                  </li>
-                  <li>
-                    <a href="layout_navbar-menus.html">
-                      Navbar Menus </a>
-                  </li>
-                  <li>
-                    <a href="layout_navbar-contextual.html">
-                      Contextual Example </a>
-                  </li>
-                  <li>
-                    <a href="layout_navbar-search-alt.html">
-                      Search Alt Style </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-hand-o-up"></span>
-                  Topbar
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_topbar.html">
-                      Default Style </a>
+                    <a href="{{path('bete')}}">
+                      Betes </a>
                   </li> 
                   <li>
                     <a href="layout_topbar-menu.html">
@@ -1027,17 +971,17 @@
               <li>
                 <a class="accordion-toggle" href="#">
                   <span class="fa fa-arrows-v"></span>
-                  Content Body
+                  Commandes
                   <span class="caret"></span>
                 </a>
                 <ul class="nav sub-nav">
                   <li>
                     <a href="layout_content-blank.html">
-                      Blank Starter </a>
+                       Nouvelles Commandes </a>
                   </li>
                   <li>
                     <a href="layout_content-fixed.html">
-                      Fixed Window </a>
+                      Commandes Approuvées </a>
                   </li>
                   <li>
                     <a href="layout_content-heading.html">
@@ -1682,7 +1626,7 @@
               </a>
             </li>
             <li class="crumb-link">
-              <a href="index.html">Home</a>
+              <a href="{{path('admin')}}">Home</a>
             </li>
             <li class="crumb-trail">Dashboard</li>
           </ol>
@@ -1720,7 +1664,7 @@
               <div class="panel panel-tile text-center br-a br-grey">
                 <div class="panel-body">
                   <h1 class="fs30 mt5 mbn">1,426</h1>
-                  <h6 class="text-system">NEW ORDERS</h6>
+                  <h6 class="text-system">TOTAL BERGER</h6>
                 </div>
                 <div class="panel-footer br-t p12">
                   <span class="fs11">
@@ -1734,7 +1678,7 @@
               <div class="panel panel-tile text-center br-a br-grey">
                 <div class="panel-body">
                   <h1 class="fs30 mt5 mbn">63,262</h1>
-                  <h6 class="text-success">TOTAL SALES GROSS</h6>
+                  <h6 class="text-success">TOTAL BETE</h6>
                 </div>
                 <div class="panel-footer br-t p12">
                   <span class="fs11">
@@ -1748,7 +1692,7 @@
               <div class="panel panel-tile text-center br-a br-grey">
                 <div class="panel-body">
                   <h1 class="fs30 mt5 mbn">248</h1>
-                  <h6 class="text-warning">PENDING SHIPMENTS</h6>
+                  <h6 class="text-warning">TOTAL CLIENT</h6>
                 </div>
                 <div class="panel-footer br-t p12">
                   <span class="fs11">
@@ -1817,21 +1761,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-3 col-xl-3 visible-xl">
-              <div class="panel panel-tile text-center br-a br-grey">
-                <div class="panel-body">
-                  <h1 class="fs30 mt5 mbn">6,718</h1>
-                  <h6 class="text-danger">UNIQUE VISITS</h6>
-                </div>
-                <div class="panel-footer br-t p12 hidden">
-                  <span class="fs11">
-                    <i class="fa fa-arrow-down pr5 text-danger"></i> 6% DECREASE
-                    <b>1W AGO</b>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          
                     
               </div>
               <!-- end: .col-md-4-->
@@ -1844,9 +1774,9 @@
 
         </div>
         <!-- end: .tray-center -->
-
+{% block body %}
         <!-- begin: .tray-right -->
-        <aside class="tray tray-right tray270 pn hidden" data-tray-height="match">
+        <aside class="tray tray-right tray270 pn hidden" data-tray-height="match" >
 
           <!-- store activity timeline -->
           <ol class="timeline-list pl5 mt5">
@@ -2100,7 +2030,7 @@
       </div>
     </aside>
     <!-- End: Right Sidebar -->
-
+{% endblock %}
   </div>
   <!-- End: Main -->
 

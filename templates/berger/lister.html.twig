@@ -1,0 +1,69 @@
+{% extends 'layoutadmin.html.twig' %}
+
+{% block title %}Hello {% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="table-layout animated fadeIn" style="margin-top:-400px;margin-left:100px;">
+<div class="row">
+    <div class="col-lg-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark"> <i class="icon-acteurs font-dark"></i> <span class="caption-subject bold uppercase">Liste des contrats</span> </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar" style="border: 1px solid #d4d4d4; padding: 4px;background: #efefef;">
+                    <div class="pull-right">
+                        <a href="<?php _url('contrats/contrat_auto/showExport/'.@$result_type);?>" class="btn btn-circle purple"><i class="fa fa-download"></i> Exporter </a>
+                    </div>
+                </div>
+
+                <table id="datagrid" class="datagrid table table-striped table-bordered table-hover table-checkable">
+                    <thead>
+                    <tr>
+                      <th style="width: 1%"> <input type="checkbox" class="group-checkable" data-set=".datagrid .checkboxes" />
+                      </th>
+                        <th class="text-center" order="desc"> Numero</th>
+                        <th class="text-center"> Nom Berger </th>
+                        <th class="text-center"> Adresse </th>
+                        <th class="text-center"> N° piece </th>
+                        <th class="text-center"> Email </th>
+                        <th class="text-center"> Login </th>                        
+                        <th style="width: 1%;" class="no-sort hide"> Action </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   
+                     
+                         {% for bergery in berger %}
+
+
+                        <tr>
+                         <td><input name="selected[]" type="checkbox" class="checkboxes" value="{{bergery.id}}" /></td>                               
+                            <td>{{bergery.id}}</td>
+                            <td>{{bergery.nomcomplet}}</td>
+                            <td>{{bergery.adresse}}</td>
+                            <td>{{bergery.numpiece}}</td>
+                            <td>{{bergery.email}}</td>
+                            <td>{{bergery.login}}</td>
+                            <td>
+                                <a href="{{ path('berger_show', {'id': bergery.id}) }}" ><i class="fas fa-eye btn btn-success"></i></a>
+                                <a href="{{ path('berger_delete', {'id': bergery.id}) }}"><i class="fas fa-trash-alt btn btn-danger"></i></a>
+                            </td>
+                           
+                        
+                           </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

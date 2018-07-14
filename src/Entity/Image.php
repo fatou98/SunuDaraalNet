@@ -21,7 +21,11 @@ class Image
      */
     private $image;
  /**
+<<<<<<< HEAD
     * @ORM\ManyToOne(targetEntity="App\Entity\Bete")
+=======
+    * @ORM\ManyToOne(targetEntity="App\Entity\Bete", inversedBy="images")
+>>>>>>> 5a36b51033c95f471c3aa1d80d29fe39e327ad91
     * @ORM\JoinColumn(nullable=false)
     */
     private $bete;

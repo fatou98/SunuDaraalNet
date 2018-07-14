@@ -224,4 +224,7 @@ class Client implements AdvancedUserInterface, \Serializable {
         $this->Tel = $Tel;
         return $this;
     }
+    public function __toString(){
+        return $this->nomcomplet;
+    }
 }
