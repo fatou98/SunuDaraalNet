@@ -58,7 +58,7 @@ class Bete
     private $bergerie;
     
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Race")
+    * @ORM\ManyToOne(targetEntity="App\Entity\Race")
     * @ORM\JoinColumn(nullable=false)
     */
     private $race;
@@ -67,7 +67,7 @@ class Bete
      */
     private $etat;
     /**
-    * @ORM\OneToMany(targetEntity="App\Entity\Image",mappedBy="bien" )
+    * @ORM\OneToMany(targetEntity="App\Entity\Image",mappedBy="bete" )
     * @ORM\JoinColumn(nullable=false)
     */
     private $images;

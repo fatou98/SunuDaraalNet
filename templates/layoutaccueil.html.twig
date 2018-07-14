@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/flexslider.css">
         <link rel="stylesheet" href="css/pricing.css">
         <link rel="stylesheet" href="css/main.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
         <script src="js/jquery-1.11.2.min.js"></script>
@@ -75,9 +76,9 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="Food-fair-toggle">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#about">ACCUEIL</a></li>
-                        <li><a href="#pricing">A PROPOS</a></li>
-                        <li><a href="#">GUETTE-GUI</a></li>
+                        <li><a href="#">ACCUEIL</a></li>
+                        <li><a href="#about">A PROPOS</a></li>
+                        <li><a href="#pricing">GUETTE-GUI</a></li>
                         <li><a href="#">BERGER</a></li>
                         <li><a href="#featured-dish">Inscription/Connexion</a></li>
                         <li><a href="#contact">contact</a></li>
@@ -92,24 +93,24 @@
             <div class="item">
                 <div class="container">
                     <div class="header-content">
-                        <h1 class="header-title">BEST FOOD</h1>
-                        <p class="header-sub-title">create your own slogan</p>
+                        <h1 class="header-title">NDIOUR GÜ BAAKH</h1>
+                        <p class="header-sub-title">De bonne race de mouton avec une alimentation saine</p>
                     </div> <!-- /.header-content -->
                 </div>
             </div>
             <div class="item">
                 <div class="container">
                     <div class="header-content">
-                        <h1 class="header-title">BEST SNACKS</h1>
-                        <p class="header-sub-title">create your own slogan</p>
+                        <h1 class="header-title">KHAAR YOU WËER</h1>
+                        <p class="header-sub-title">Votre santé notre prioritées, nous vous proposons des "Moutons" en bonne santé avec suivit veterinaire certifier</p>
                     </div> <!-- /.header-content -->
                 </div>
             </div>
             <div class="item">
                 <div class="container">
                     <div class="header-content text-right pull-right">
-                        <h1 class="header-title">BEST DRINKS</h1>
-                        <p class="header-sub-title">create your own slogan</p>
+                        <h1 class="header-title">NDIEUK BÜ YOMB</h1>
+                        <p class="header-sub-title">En </p>
                     </div> <!-- /.header-content -->
                 </div>
             </div>
@@ -128,7 +129,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-6 dis-table-cell">
                             <div class="section-content">
-                                <h2 class="section-content-title">About us</h2>
+                                <h3 class="section-content-title">A Propos de Nous</h3>
                                 <p class="section-content-para">
                                     Astronomy compels the soul to look upward, and leads us from this world to another.  Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. As we got further and further away, it [the Earth] diminished in size.
                                 </p>
@@ -152,13 +153,13 @@
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
                                     <div class="section-header">
-                                        <h2 class="pricing-title">Affordable Pricing</h2>
+                                        <h2 class="pricing-title">GUETTE-GUI</h2>
                                         <ul id="filter-list" class="clearfix">
-                                            <li class="filter" data-filter="all">All</li>
-                                            <li class="filter" data-filter=".breakfast">Breakfast</li>
-                                            <li class="filter" data-filter=".special">Special</li>
-                                            <li class="filter" data-filter=".desert">Desert</li>
-                                            <li class="filter" data-filter=".dinner">Dinner</li>
+                                            <li class="filter" data-filter="all">Tous</li>
+                                            <li class="filter" data-filter=".Ladoum">Ladoum</li>
+                                            <li class="filter" data-filter=".Balli-Balli">Balli-Balli</li>
+                                            <li class="filter" data-filter=".Toulabeer">Toulabeer</li>
+                                            <li class="filter" data-filter=".Azawate">Azawate</li>
                                         </ul><!-- @end #filter-list -->
                                     </div>
                                 </div>
@@ -171,133 +172,28 @@
                     <div class="row">  
                         <div class="col-md-10 col-md-offset-1">
                             <ul id="menu-pricing" class="menu-price">
-                                <li class="item dinner">
+                               {% for bete in betes %}
+                                <li class="item {{ bete.race.libelle }}">
 
                                     <a href="#">
-                                        <img src="images/food1.jpg" class="img-responsive" alt="Food" >
+                                    {% for key in bete.images %}
+                                    {% if loop.first %}
+                                        <img src="data:image/png;base64,{{ key.image }}" class="img-responsive" alt="Food" >
+                                        {% endif %}
+                                        {% endfor %}
                                         <div class="menu-desc text-center">
                                             <span>
-                                                <h3>Tomato Curry</h3>
-                                                Natalie &amp; Justin Cleaning by Justin Younger
-                                            </span>
+                                                <h3>{{ bete.nomcomplet }}</h3>
+                                                
+<i class="material-icons">add_circle_outline</i>
+                                                </span>
                                         </div>
                                     </a>
                                         
-                                    <h2 class="white">$20</h2>
+                                    <h2 class="white">{{ bete.prix }} Fcfa</h2>
                                 </li>
+                                {% endfor %}
 
-                                <li class="item breakfast">
-
-                                    <a href="#">
-                                        <img src="images/food2.jpg" class="img-responsive" alt="Food" >
-                                        <div class="menu-desc">
-                                            <span>
-                                                <h3>Prawn Dish</h3>
-                                                Lorem ipsum dolor sit amet
-                                            </span>
-                                        </div>
-                                    </a>
-                                        
-                                    <h2 class="white">$20</h2>
-                                </li>
-                                <li class="item desert">
-
-                                    <a href="#">
-                                        <img src="images/food3.jpg" class="img-responsive" alt="Food" >
-                                        <div class="menu-desc">
-                                            <span>
-                                                <h3>Salad Dish</h3>
-                                                Consectetur adipisicing elit, sed do eiusmod
-                                            </span>
-                                        </div>
-                                    </a>
-                                        
-                                    <h2 class="white">$18</h2>
-                                </li>
-                                <li class="item breakfast special">
-
-                                    <a href="#">
-                                        <img src="images/food4.jpg" class="img-responsive" alt="Food" >
-                                        <div class="menu-desc">
-                                            <span>
-                                                <h3>Prawn Dish</h3>
-                                                Tempor incididunt ut labore et dolore
-                                            </span>
-                                        </div>
-                                    </a>
-                                        
-                                    <h2 class="white">$15</h2>
-                                </li>
-                                <li class="item breakfast">
-
-                                    <a href="#">
-                                        <img src="images/food5.jpg" class="img-responsive" alt="Food" >
-                                        <div class="menu-desc">
-                                            <span>
-                                                <h3>Vegetable Dish</h3>
-                                                Magna aliqua. Ut enim ad minim veniam
-                                            </span>
-                                        </div>
-                                    </a>
-                                        
-                                    <h2 class="white">$20</h2>
-                                </li>
-                                <li class="item dinner special">
-
-                                    <a href="#">
-                                        <img src="images/food6.jpg" class="img-responsive" alt="Food" >
-                                        <div class="menu-desc">
-                                            <span>
-                                                <h3>Chicken Dish</h3>
-                                                Quis nostrud exercitation ullamco laboris
-                                            </span>
-                                        </div>
-                                    </a>
-
-                                    <h2 class="white">$22</h2>
-                                </li>
-                                <li class="item desert">
-
-                                    <a href="#">
-                                        <img src="images/food7.jpg" class="img-responsive" alt="Food" >
-                                        <div class="menu-desc">
-                                            <span>
-                                                <h3>Vegetable Noodles</h3>
-                                                Nisi ut aliquip ex ea commodo
-                                            </span>
-                                        </div>
-                                    </a>
-
-                                    <h2 class="white">$32</h2>
-                                </li>
-                                <li class="item dinner">
-
-                                    <a href="#">
-                                        <img src="images/food8.jpg" class="img-responsive" alt="Food" >
-                                        <div class="menu-desc">
-                                            <span>
-                                                <h3>Special Salad</h3>
-                                                Duis aute irure dolor in reprehenderit
-                                            </span>
-                                        </div>
-                                    </a>
-
-                                    <h2 class="white">$38</h2>
-                                </li>
-                                <li class="item desert special">
-
-                                    <a href="#">
-                                        <img src="images/food9.jpg" class="img-responsive" alt="Food" >
-                                        <div class="menu-desc">
-                                            <span>
-                                                <h3>Ice-cream</h3>
-                                                Excepteur sint occaecat cupidatat non
-                                            </span>
-                                        </div>
-                                    </a>
-                                    
-                                    <h2 class="white">$38</h2>
-                                </li>  
                             </ul>
 
                             <!-- <div class="text-center">
